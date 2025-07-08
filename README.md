@@ -1,6 +1,3 @@
-Got it ✅ — here’s the updated `README.md` with the new project name **"Bangla OCR Handwriting Data"**, fully integrated and polished for clarity and professionalism:
-
----
 
 # ✍️ BanglaOCR: A Platform to Collect Bangla Handwriting for OCR Models
 
