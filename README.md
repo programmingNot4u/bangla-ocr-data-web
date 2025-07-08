@@ -7,8 +7,8 @@
 
 ## 🌐 Live Demo 
 
-https://bangla-ocr-data-web.vercel.app/ (frontend)
-https://hossainimamrony71.pythonanywhere.com/ (API Endpoint)
+* https://bangla-ocr-data-web.vercel.app/ (frontend)
+* https://hossainimamrony71.pythonanywhere.com/ (API Endpoint)
 
 ---
 
