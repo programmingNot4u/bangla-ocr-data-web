@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangla OCR Data | Chrono-Scribe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <h1>Bangla OCR <span class="highlight">Handwriting Data</span></h1>
+      </header>
+
+      <main class="challenge-box">
+        <section class="prompt-section">
+          <h2>Your Mission:</h2>
+          <p class="sub-mission">
+            Help train our AI by uploading a handwritten Bangla sample.
+          </p>
+          <p class="animated-text" id="animated-prompt">
+            Loading new mission...
+          </p>
+        </section>
+
+        <section class="instructions-section">
+          <h3>INSTRUCTION:</h3>
+          <ol>
+            <li>
+              <span class="step-num">০১</span>
+              উপরের লেখা কাগজে হাতে লিখুন।
+            </li>
+            <li>
+              <span class="step-num">০২</span>
+              আপনার সবচেয়ে ভালো হস্তাক্ষর ব্যবহার করুন। এআই দেখছে।
+            </li>
+            <li>
+              <span class="step-num">০৩</span>
+              আপনার হাতে লেখা স্পষ্ট একটি ছবি নিচে আপলোড করুন।
+            </li>
+          </ol>
+        </section>
+
+        <section class="upload-section">
+          <form id="upload-form">
+            <label for="file-upload" class="custom-file-upload">
+              <span class="icon">&#128247;</span>
+              <span class="text">Select Transmission</span>
+            </label>
+            <input id="file-upload" type="file" accept="image/*" />
+            <button type="submit" class="submit-btn" disabled>Transmit</button>
+          </form>
+        </section>
+
+        <section class="preview-section">
+          <div id="image-preview-container" class="image-preview-container">
+            <p class="preview-text">Awaiting Transmission...</p>
+            <img id="image-preview" src="#" alt="Your Uploaded Image" />
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <p>
+          STATUS:
+          <span id="status-text" class="status-neutral">AWAITING INPUT</span>
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

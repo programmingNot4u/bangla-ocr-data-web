@@ -1,0 +1,305 @@
+:root {
+  --primary-color: #0d0d0d;
+  --secondary-color: #1a1a1a;
+  --accent-color: #00ffff;
+  --glow-color: rgba(0, 255, 255, 0.7);
+  --text-color: #e0e0e0;
+  --header-font: 'Orbitron', sans-serif;
+  --body-font: 'Rajdhani', sans-serif;
+}
+
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Container forces all content within viewport */
+.container {
+  width: 100%;
+  height: 100vh;
+  max-width: 800px;
+  background: var(--secondary-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 15px;
+  box-shadow: 0 0 25px var(--glow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Header */
+.main-header {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.main-header h1 {
+  font-family: var(--header-font);
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--glow-color), 0 0 15px #fff;
+}
+
+/* Challenge Box */
+.challenge-box {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Section styling */
+.prompt-section,
+.instructions-section,
+.upload-section,
+.preview-section {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+/* Prompt Section */
+.prompt-section h2 {
+  font-family: var(--header-font);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.animated-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: #fff;
+  border-right: 2px solid var(--accent-color);
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+  animation: none;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-color); }
+}
+
+/* Instructions Section */
+.instructions-section {
+  font-size: 0.95rem;
+  padding: 0 10px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.instructions-section h3 {
+  font-family: var(--header-font);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.instructions-section ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions-section li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.step-num {
+  font-family: var(--header-font);
+  color: var(--accent-color);
+  width: 40px;          /* Fixed width for alignment */
+  flex-shrink: 0;       /* Prevent shrinking */
+  text-align: right;    /* Align number right inside the box */
+  margin-right: 12px;   /* Space between number and text */
+  user-select: none;    /* Prevent accidental selection */
+}
+
+/* The instruction text inside li */
+.instructions-section li > *:not(.step-num) {
+  flex-grow: 1;
+  text-align: justify;
+}
+
+/* Upload Section */
+.upload-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0 10px;
+}
+
+/* Modern custom file upload styling */
+.custom-file-upload {
+  border: 2px solid var(--accent-color);
+  padding: 10px 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  color: var(--accent-color);
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.custom-file-upload .icon {
+  font-size: 1.2rem;
+}
+.custom-file-upload:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  transform: scale(1.02);
+}
+input[type="file"] {
+  display: none;
+}
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--header-font);
+}
+.submit-btn:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+}
+.submit-btn:not(:disabled):hover {
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: scale(1.05);
+}
+
+/* Preview Section */
+.image-preview-container {
+  border: 2px dashed rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.image-preview-container.active {
+  background: rgba(0, 255, 255, 0.05);
+}
+.preview-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+#image-preview {
+  display: none;
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 5px;
+}
+
+/* Footer */
+.main-footer {
+  text-align: center;
+  font-family: var(--header-font);
+  font-size: 0.9rem;
+}
+
+/* Status Colors */
+.status-neutral { color: #888; }
+.status-progress { color: #ffeb3b; animation: pulse 1.5s infinite; }
+.status-success { color: #76ff03; text-shadow: 0 0 10px #76ff03; }
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .main-header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .prompt-section h2 {
+    font-size: 1.2rem;
+  }
+  .animated-text {
+    font-size: 1rem;
+  }
+  .instructions-section {
+    font-size: 0.85rem;
+    padding: 0 10px;
+    max-width: 100%;
+    text-align: left; /* keep left alignment */
+  }
+  .instructions-section li {
+    /* Keep side-by-side layout on mobile */
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 35px;
+    margin-right: 8px;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+  .instructions-section li > *:not(.step-num) {
+    text-align: justify;
+  }
+  .custom-file-upload,
+  .submit-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .image-preview-container {
+    min-height: 60px;
+  }
+  #image-preview {
+    max-height: 100px;
+  }
+  .main-footer {
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+}
+
+.sub-mission {
+  color: #aaa;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 10px;
+}
